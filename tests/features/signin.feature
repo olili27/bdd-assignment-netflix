@@ -23,7 +23,7 @@ Feature: Signin
     But I enter an incorrect password
     And I click the signin button
     Then I should remain on the signin page
-    And I should see a message `Incorrect password for {correct email}. You can use a sign-in code, reset your password or try again`.
+    And I should see a message `Incorrect password for {correct email}. You can use a sign-in code, reset your password or try again`
 
     Scenario: Successful Signin with a correct email and correct and valid signin code
     When I enter a correct email 
@@ -33,6 +33,6 @@ Feature: Signin
     Then I should be redirected to profiles page
     And I choose a profile
     Then I am redirected to the browse page
-    And I see the dashboard with movies in the different categories e.g recommendations, my list
+    And I see the dashboard with movies/shows in the different categories e.g recommendations, my list, continue watching
 
 
