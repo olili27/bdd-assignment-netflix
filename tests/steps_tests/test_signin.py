@@ -55,3 +55,33 @@ def select_profile():
 )
 def on_browse_page():
     print("on browse page...")
+
+
+#  Unsuccessful Signin with a correct email and incorrect password
+
+
+@when("I enter a correct email")
+def enter_email():
+    print("enter email...")
+
+
+@when("I enter an incorrect password")
+def enter_password():
+    print("enter password...")
+
+
+@when("I click the signin button")
+def click():
+    print("click signin button...")
+
+
+@then("I should remain on the signin page")
+def stay_on_signin_page():
+    print("stay on signin page...")
+
+
+@then(
+    "I should see a message `Incorrect password for {correct email}. You can use a sign-in code, reset your password or try again`."
+)
+def see_message():
+    print("see message...")
