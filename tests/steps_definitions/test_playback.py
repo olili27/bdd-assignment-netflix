@@ -35,11 +35,17 @@ def choose_movie():
 
 # Pause The Movie
 
+c = 0
 
 @then("The movie should start playing")
 @then("The movie should stop playing")
 @given("The movie is playing")
 def movie_playing():
+    global c
+
+    print("called c: ", c)
+    c += 1
+    print("called c: ", c)
     print("movie playing...")
 
 

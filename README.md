@@ -40,7 +40,7 @@
         - Seek Forward
     
 ## Project Setup
-    The project was kick started from a virtual environment. It is advised you do the same when you want to try out the project. The project was built using python 3.12.3. The BDD tests are done using pytest and pytest-bdd
+    The project was kick started from a virtual environment. It is advised you do the same when you want to try out the project. The project was built using python 3.11.5. The BDD tests are done using pytest and pytest-bdd
     
     From the root of th project directory/folder
         To create a virtual environment run `python3 -m venv venv`
