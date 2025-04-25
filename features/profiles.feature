@@ -5,35 +5,37 @@ Feature: User Profiles
 
     Background:
         Given I am connected to the internet
-        And I already signed in
-        And I chose my user profile
-        And I have an active subscription
-        Given multiple profiles exist
+        And I sign into a netflix account
+        And The account has an active subscription
+        And Multiple profiles exist
+        And I choose a profile
 
     Scenario: Switch Profile
-    And I am on the browse page
-    When I click a profiles button
-    Then I should see all profiles that exist
-    And I should be able to select another profile
-    And I should see content personalized for that profile on the browse page
+    Given I am on the browse page
+    And I click a profiles button
+    And I see all profiles that exist
+    When I select another profile
+    Then I should see content personalized for that profile on the browse page
 
     Scenario: Create a New Profile
     Given I am on the manage profiles page
+    And I see all profiles that exist
     When I click "Add Profile" and enter a name
-    Then a new profile should be created
-    And The new profile should be listed among the existing profiles
+    And Confirm to create the profile
+    Then A new profile should be created
+    And The new profile should be listed among the existing profiles on the manage profiles page
 
     Scenario: Delete a Profile
     Given I am on the manage profiles page
-    And all the profiles are listed
-    And I click on a given profile
-    And I am on the preferences page for that profile 
+    And I see all profiles that exist
+    And I select a given profile
+    And I am redirected to the preferences page for that selected profile 
     And There is an option to delete the profile
     When I decide to delete this profile
-    Then I should see a pop asking me to confirm or cancel the delete action
+    Then I should be asked to confirm or cancel the delete action
     And I confirm the delete action
-    Then the profile should be deleted
+    Then The profile should be deleted
     And I am redirected to the manage profiles page
-    And see the list of profiles excluding the one I deleted
+    And I should see the list of profiles excluding the one I deleted
     
 
