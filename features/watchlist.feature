@@ -5,23 +5,25 @@ Feature: Watch list Management
 
     Background:
         Given I am connected to the internet
-        And I already signed up for a netflix account
-        And I have an active subscription
+        And I sign into a netflix account
+        And The account has an active subscription
 
     Scenario: Add to Watch list
-    And I am on the browse page
-    Given I am viewing "The Crown"
+    Given I am on the browse page
+    Given I am previewing a movie "The Crown"
+    And "The Crown" is not in my watch list
     When I click the "Add to Watch list" button
     Then "The Crown" should appear in my watch list
 
     Scenario: Remove from Watch list
-    Given I am in on my watch list page
+    Given I am on my watch list page or browse page
+    And I am previewing a movie "The Crown"
     And "The Crown" is in my watch list
     When I click the "Remove from Watch list" button
     Then "The Crown" should no longer be in my watch list
 
     Scenario: View Watch list
     Given I am on the browse page
-    And I have added items to my watch list
+    And I have added movies/shows to my watch list
     When I open the watch list page
-    Then I should see the added items
+    Then I should see all the added movies/shows
