@@ -12,7 +12,7 @@ Feature: User Profiles
 
     Scenario: Switch Profile
     Given I am on the browse page
-    And I click a profiles button
+    When I click a profiles button
     And I see all profiles that exist
     When I select another profile
     Then I should see content personalized for that profile on the browse page
@@ -20,7 +20,8 @@ Feature: User Profiles
     Scenario: Create a New Profile
     Given I am on the manage profiles page
     And I see all profiles that exist
-    When I click "Add Profile" and enter a name
+    When I click "Add Profile" 
+    And I enter a name
     And Confirm to create the profile
     Then A new profile should be created
     And The new profile should be listed among the existing profiles on the manage profiles page
@@ -28,11 +29,11 @@ Feature: User Profiles
     Scenario: Delete a Profile
     Given I am on the manage profiles page
     And I see all profiles that exist
-    And I select a given profile
+    When I select a given profile
     And I am redirected to the preferences page for that selected profile 
     And There is an option to delete the profile
     When I decide to delete this profile
-    Then I should be asked to confirm or cancel the delete action
+    And I am asked to confirm or cancel the delete action
     And I confirm the delete action
     Then The profile should be deleted
     And I am redirected to the manage profiles page
