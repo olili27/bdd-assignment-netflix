@@ -16,7 +16,7 @@ Feature: Search for Movies/Shows
     And I should see other movies/shows related to the word "Stranger things"
 
     Scenario: Search For a movie/show that does not exist on netflix
-    Given A movie "RandomNonexistentShow" is available on netflix
+    Given A movie "RandomNonexistentShow" is not available on netflix
     When I search for "RandomNonexistentShow"
     Then I should see other movies/shows related to the word "RandomNonexistentShow"
 
