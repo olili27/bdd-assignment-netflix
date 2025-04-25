@@ -24,6 +24,7 @@ def on_signin_page():
 
 # Successful Signin with a correct email and correct password
 
+
 @when("I enter a correct email")
 def enter_email():
     print("enter email...")
@@ -60,6 +61,7 @@ def on_browse_page():
 
 #  Unsuccessful Signin with a correct email and incorrect password
 
+
 @when("I enter a correct email")
 def enter_email():
     print("enter email...")
@@ -83,6 +85,7 @@ def see_message():
 
 
 # Successful Signin with a correct email and correct and valid signin code
+
 
 @when("I enter a correct email")
 def enter_email():
